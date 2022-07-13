@@ -1,0 +1,10 @@
+YOLOV4Scaled:
+  WEIGHT: "/workspace/models/yolov4Scaled/yolov4-p5.pt"
+
+  # DATASET: /workspace/deep_sort_pytorch/detector/YOLOV6/data/coco.yaml
+  IMG_SIZE: 640
+  SCORE_THRESH: 0.35
+  CONF_THRESH: 0.25
+  NMS_THRESH: 0.45
+  IS_XYWH:  True
+  HALF: False

@@ -1,0 +1,19 @@
+# Folders
+__pycache__/
+build/
+*.egg-info
+detector/YOLOv3/nms/ext/build
+
+# Files
+*.weights
+*.t7
+*.mp4
+*.avi
+*.so
+*.o
+*.txt
+*.pth
+*.pkl
+detector/YOLOV5/runs/
+detector/YOLOV7/.git.bk
+*.json

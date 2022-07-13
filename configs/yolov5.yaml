@@ -1,0 +1,8 @@
+YOLOV5:
+  WEIGHT: "/workspace/models/yolov5/v4.0/yolov5s.pt"
+  
+  IMG_SIZE: 640
+  SCORE_THRESH: 0.5
+  CONF_THRESH: 0.25
+  NMS_THRESH: 0.45
+  IS_XYWH:  True

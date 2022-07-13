@@ -1,0 +1,10 @@
+YOLOV4:
+  WEIGHT: "/workspace/models/yolov4-608/yolov4.weights"
+  CFG: "/workspace/models/yolov4-608/yolov4.cfg"
+  DATASET: detector/YOLOV4/data/coco.yaml
+  IMG_SIZE: 640
+  SCORE_THRESH: 0.5
+  CONF_THRESH: 0.25
+  NMS_THRESH: 0.45
+  IS_XYWH:  True
+  HALF: False

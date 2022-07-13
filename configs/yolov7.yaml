@@ -1,0 +1,9 @@
+YOLOV7:
+  WEIGHT: "/workspace/models/yolov7/yolov7.pt"
+
+  IMG_SIZE: 640
+  SCORE_THRESH: 0.5
+  CONF_THRESH: 0.25
+  NMS_THRESH: 0.45
+  IS_XYWH:  True
+  HALF: False
