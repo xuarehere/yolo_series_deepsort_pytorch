@@ -188,8 +188,13 @@ Then you can try [train.py](deep_sort/deep/train.py) to train your own parameter
 ## References
 -  [nwojke/deep_sort](https://github.com/nwojke/deep_sort)
 - [Joseph Redmon/yolov3](https://pjreddie.com/darknet/yolo/)
-- [deep_sort_pytorch](https://github.com/ZQPei/deep_sort_pytorch)
-- 
+- [ZQPei/deep_sort_pytorch](https://github.com/ZQPei/deep_sort_pytorch)
+- [WongKinYiu/PyTorch_YOLOv4](https://github.com/WongKinYiu/PyTorch_YOLOv4)
+- [WongKinYiu/ScaledYOLOv4](https://github.com/WongKinYiu/ScaledYOLOv4)
+- [ultralytics/yolov5](https://github.com/ultralytics/yolov5)
+- [meituan/YOLOv6](https://github.com/meituan/YOLOv6)
+- [WongKinYiu/yolov7](https://github.com/WongKinYiu/yolov7)
+
 
 
 
