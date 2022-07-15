@@ -54,7 +54,7 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 1. Clone this repository
 ```
-git clone git@github.com:ZQPei/deep_sort_pytorch.git
+git clone https://github.com/xuarehere/yolovx_deepsort_pytorch.git
 ```
 
 2. Download YOLOv3 parameters
