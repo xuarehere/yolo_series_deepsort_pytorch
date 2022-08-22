@@ -13,7 +13,13 @@ detector/YOLOv3/nms/ext/build
 *.o
 *.txt
 *.pth
+*.pt
 *.pkl
 detector/YOLOV5/runs/
 detector/YOLOV7/.git.bk
 *.json
+*.wts
+*.zip
+*.conv*
+
+

@@ -1,6 +1,6 @@
 DEEPSORT:
   # REID_CKPT: "./deep_sort/deep/checkpoint/ckpt.t7"
-  REID_CKPT: "/workspace/models/deep_sort_pytorch/last.t7"
+  REID_CKPT: "./models/deep_sort_pytorch/last.t7"
   MAX_DIST: 0.2
   MIN_CONFIDENCE: 0.3
   NMS_MAX_OVERLAP: 0.5

@@ -1,7 +1,7 @@
 YOLOV6:
-  WEIGHT: "/workspace/models/yolov6/yolov6s.pt"
+  WEIGHT: "./models/yolov6/yolov6s.pt"
 
-  DATASET: /workspace/py/deep_sort_pytorch/detector/YOLOV6/data/coco.yaml
+  DATASET: ./detector/YOLOV6/data/coco.yaml
   IMG_SIZE: 640
   SCORE_THRESH: 0.35
   CONF_THRESH: 0.25

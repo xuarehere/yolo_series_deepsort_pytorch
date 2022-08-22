@@ -1,16 +1,124 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Deep Sort with PyTorch(yolo-all)](#deep-sort-with-pytorchyolo-all)
+  - [Project structure](#project-structure)
+  - [Introduction](#introduction)
+  - [Model](#model)
+    - [Object detection](#object-detection)
+    - [ReID](#reid)
+  - [Dependencies](#dependencies)
+  - [Quick Start](#quick-start)
+  - [Training the RE-ID model](#training-the-re-id-model)
+  - [Demo videos and images](#demo-videos-and-images)
+  - [References](#references)
+  
 # Deep Sort with PyTorch(yolo-all)
+
 
 ![](demo/demo.gif)
 
 
-
+## Project structure
+```
+yolovx_deepsort_pytorch/
+./yolovx_deepsort_pytorch/
+├── 001.avi
+├── configs
+│   ├── deep_sort.yaml
+│   ├── fastreid.yaml
+│   ├── mmdet.yaml
+│   ├── yolov3_tiny.yaml
+│   ├── yolov3.yaml
+│   ├── yolov4Scaled.yaml
+│   ├── yolov4.yaml
+│   ├── yolov5.yaml
+│   ├── yolov6.yaml
+│   └── yolov7.yaml
+├── deep_sort
+│   ├── deep
+│   ├── deep_sort.py
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── README.md
+│   └── sort
+├── deepsort.py
+├── demo
+│   ├── 1.jpg
+│   ├── 2.jpg
+│   └── demo.gif
+├── detector
+│   ├── __init__.py
+│   ├── MMDet
+│   ├── __pycache__
+│   ├── YOLOv3
+│   ├── YOLOV4
+│   ├── YOLOV4Scaled
+│   ├── YOLOV5
+│   ├── YOLOV6
+│   └── YOLOV7
+├── LICENSE
+├── models
+│   ├── deep_sort_pytorch
+│   ├── yolov3
+│   ├── yolov4
+│   ├── yolov4-608
+│   ├── yolov4Scaled
+│   ├── yolov4.zip
+│   ├── yolov5
+│   ├── yolov6
+│   └── yolov7
+├── output
+│   ├── yolov3
+│   ├── yolov4
+│   ├── yolov4Scaled
+│   ├── yolov5
+│   ├── yolov6
+│   └── yolov7
+├── ped_det_server.py
+├── README.md
+├── requirements.txt
+├── results_analysis
+│   └── analysis.py
+├── scripts
+│   ├── yolov3_deepsort.sh
+│   └── yolov3_tiny_deepsort.sh
+├── thirdparty
+│   ├── fast-reid
+│   └── mmdetection
+├── train.jpg
+├── tutotial
+│   ├── Hungarian_Algorithm.ipynb
+│   ├── kalman_filter.ipynb
+│   └── kalman_filter.py
+├── utils
+│   ├── asserts.py
+│   ├── draw.py
+│   ├── evaluation.py
+│   ├── __init__.py
+│   ├── io.py
+│   ├── json_logger.py
+│   ├── log.py
+│   ├── parser.py
+│   ├── __pycache__
+│   └── tools.py
+├── webserver
+│   ├── config
+│   ├── images
+│   ├── __init__.py
+│   ├── readme.md
+│   ├── rtsp_threaded_tracker.py
+│   ├── rtsp_webserver.py
+│   ├── server_cfg.py
+│   └── templates
+└── yolov3_deepsort_eval.py
+```
 
 ## Introduction
 This is an implement of MOT tracking algorithm deep sort. This project originates from [deep_sort_pytorch](https://github.com/ZQPei/deep_sort_pytorch). On the above projects, this project add the existing yolo detection model algorithm (YOLOv3, YOLOV4, YOLOV4Scaled, YOLOV5, YOLOV6, YOLOV7).
 
-# Model
+## Model
 
-## Object detection
+### Object detection
 
 - MMDet
 - YOLOv3
@@ -22,7 +130,7 @@ This is an implement of MOT tracking algorithm deep sort. This project originate
 
 
 
-## ReID 
+### ReID 
 
 - deepsort-reid
 - fast-reid

@@ -1,5 +1,5 @@
 YOLOV4Scaled:
-  WEIGHT: "/workspace/models/yolov4Scaled/yolov4-p5.pt"
+  WEIGHT: "./models/yolov4Scaled/yolov4-p5.pt"
 
   # DATASET: /workspace/deep_sort_pytorch/detector/YOLOV6/data/coco.yaml
   IMG_SIZE: 640

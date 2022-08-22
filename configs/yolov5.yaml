@@ -1,5 +1,5 @@
 YOLOV5:
-  WEIGHT: "/workspace/models/yolov5/v4.0/yolov5s.pt"
+  WEIGHT: "./models/yolov5/v4.0/yolov5s.pt"
   
   IMG_SIZE: 640
   SCORE_THRESH: 0.5
