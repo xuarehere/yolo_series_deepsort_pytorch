@@ -1,4 +1,4 @@
-Please see the documentation to get the model.
+Please see the README.md documentation to get the model.
 
 For example
 ```

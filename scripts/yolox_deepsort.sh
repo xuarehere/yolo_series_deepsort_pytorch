@@ -1,0 +1,1 @@
+python deepsort.py ./001.avi --save_path ./output/yolox/001 --detect_model yolox --config_detection ./configs/yolox.yaml

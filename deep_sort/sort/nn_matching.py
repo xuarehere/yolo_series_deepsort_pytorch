@@ -174,4 +174,4 @@ class NearestNeighborDistanceMetric(object):
         cost_matrix = np.zeros((len(targets), len(features))) 
         for i, target in enumerate(targets):
             cost_matrix[i, :] = self._metric(self.samples[target], features)    # 计算距离，返回对应维度向量; 计算轨迹 ID-X 的 reid 特征与当前的 reid 特征的相似度 ，计算之前某个 id 的轨迹的所有 reid 的特征
-        return cost_matrix      # 行：已知轨迹 ID-X 的 reid 特征，列是检测出来的 box 的 reid 特征。 cos_matrix[i, j] 某个轨迹id与某个 box 之间的cosine距离的最小值
+        return cost_matrix      # 行：已知轨迹 ID-X 的 reid 特征，列：是检测出来的 box 的 reid 特征。 cos_matrix[i, j] 某个轨迹id与某个 box 之间的cosine距离的最小值

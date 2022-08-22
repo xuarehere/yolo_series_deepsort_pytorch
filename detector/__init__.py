@@ -73,7 +73,17 @@ def build_detector(cfg, use_cuda):
                 use_cuda=use_cuda,
                 imgsz=cfg.YOLOV7.IMG_SIZE
                 )                
-
+        elif cfg.DETECT_MODEL == "yolox":
+            from .YOLOX import YOLOx  # 当前文件导入对应的包
+            return YOLOx(  
+                weightfile=cfg.YOLOV7.WEIGHT,
+                score_thresh=cfg.YOLOV7.SCORE_THRESH, 
+                conf_thresh=cfg.YOLOV7.CONF_THRESH,
+                nms_thresh=cfg.YOLOV7.NMS_THRESH, 
+                is_xywh=cfg.YOLOV7.IS_XYWH, 
+                use_cuda=use_cuda,
+                imgsz=cfg.YOLOV7.IMG_SIZE
+                )    
         else:
             raise Exception("Need to specify the detection model!")
 
