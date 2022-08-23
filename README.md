@@ -127,7 +127,7 @@ This is an implement of MOT tracking algorithm deep sort. This project originate
 - YOLOV5
 - YOLOV6
 - YOLOV7
-
+- YOLOX
 
 
 ### ReID 
@@ -266,6 +266,8 @@ python3 deepsort.py ./001.avi --save_path ./output/yolov6/001 --config_detection
 # yolov7 + deepsort on video
 python3 deepsort.py ./001.avi --save_path ./output/yolov7/001 --config_detection ./configs/yolov7.yaml --detect_model yolov7
 
+# yolox + deepsort on video
+python deepsort.py  ./001.avi --save_path ./output/yolox/001  --config_detection ./configs/yolox.yaml  --detect_model yolox 
 
 ```
 Use `--display` to enable display.  
@@ -302,6 +304,7 @@ Then you can try [train.py](deep_sort/deep/train.py) to train your own parameter
 - [ultralytics/yolov5](https://github.com/ultralytics/yolov5)
 - [meituan/YOLOv6](https://github.com/meituan/YOLOv6)
 - [WongKinYiu/yolov7](https://github.com/WongKinYiu/yolov7)
+- [Megvii-BaseDetection/YOLOX](https://github.com/Megvii-BaseDetection/YOLOX)
 
 
 
