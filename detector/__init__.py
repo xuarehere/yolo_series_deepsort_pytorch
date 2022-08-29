@@ -48,7 +48,8 @@ def build_detector(cfg, use_cuda):
                 nms_thresh=cfg.YOLOV5.NMS_THRESH, 
                 is_xywh=cfg.YOLOV5.IS_XYWH, 
                 use_cuda=use_cuda,
-                imgsz=cfg.YOLOV5.IMG_SIZE
+                imgsz=(cfg.YOLOV5.IMG_SIZE_HEIGHT, cfg.YOLOV5.IMG_SIZE_WIDTH),
+                config= cfg.YOLOV5
                 )
         elif cfg.DETECT_MODEL == "yolov6":
             from .YOLOV6 import YOLOv6  # 当前文件导入对应的包

@@ -1,8 +1,11 @@
 YOLOV5:
   WEIGHT: "./models/yolov5/v4.0/yolov5s.pt"
-  
-  IMG_SIZE: 640
+  DATA_CONFIG: "./detector/YOLOV5/data/coco.yaml"
+  IMG_SIZE_HEIGHT: 640
+  IMG_SIZE_WIDTH: 640
   SCORE_THRESH: 0.5
   CONF_THRESH: 0.25
   NMS_THRESH: 0.45
   IS_XYWH:  True
+  OpenCV_DNN: False
+  DEVICE: ''  # cuda device, i.e. 0 or 0,1,2,3 or cpu

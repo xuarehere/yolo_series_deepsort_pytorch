@@ -8,27 +8,36 @@ import sys
 
 import utils
 
+from models.common import DetectMultiBackend
 from models.experimental import attempt_load
 from detector.YOLOV5.utils.general import check_img_size, non_max_suppression, apply_classifier, scale_coords, xyxy2xywh, \
     strip_optimizer, set_logging, increment_path
-from detector.YOLOV5.utils.datasets import  letterbox
-
+from detector.YOLOV5.utils.augmentations import letterbox
+from detector.YOLOV5.utils.torch_utils import select_device, smart_inference_mode
 class YOLOv5(object):
     def __init__(self, weightfile="", 
     score_thresh=0.0, conf_thresh=0.25, nms_thresh=0.45,
-                 is_xywh=True, use_cuda=True, imgsz=640):    
+                 is_xywh=True, use_cuda=True, imgsz=(640, 640),**kwargs):    
         # net definition
-        self.device = "cuda" if use_cuda else "cpu"
-        self.net = attempt_load(weightfile, map_location=self.device)  # load FP32 model
-        imgsz = check_img_size(imgsz, s=self.net.stride.max())  # check img_size
+        # self.device = "cuda" if use_cuda else "cpu"
+        config = kwargs['config']
+        DEVICE = config['DEVICE']
+        self.device = select_device(DEVICE)
+        # self.net = attempt_load(weightfile, map_location=self.device)  # load FP32 model
+        OpenCV_DNN = config["OpenCV_DNN"]
+        DATA_CONFIG = config["DATA_CONFIG"]
+        half = False
+        self.net = DetectMultiBackend(weightfile, device=self.device, dnn=OpenCV_DNN, data=DATA_CONFIG, fp16=half)
+        self.net.warmup(imgsz=(1, 3, *imgsz))  # warmup
+        imgsz = check_img_size(imgsz, s=self.net.stride)  # check img_size
         self.class_names = self.net.module.names if hasattr(self.net, 'module') else self.net.names
 
         # # constants
-        self.size = imgsz , imgsz
+        self.size = imgsz 
         self.score_thresh = score_thresh
         self.conf_thresh = conf_thresh
         self.is_xywh = is_xywh          # 未用到
-        self.num_classes = self.net.nc
+        # self.num_classes = self.net.nc
 
         self.iou_thres = nms_thresh
     
@@ -58,7 +67,7 @@ class YOLOv5(object):
         # forward
         with torch.no_grad():
             img = img.to(self.device)
-            out_boxes = self.net(img)[0]
+            out_boxes = self.net(img)
             pred = non_max_suppression(out_boxes, self.conf_thresh, self.iou_thres)
             boxes = pred[0]
             if str(self.score_thresh)  == "0.0":
