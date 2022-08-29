@@ -350,6 +350,7 @@ $ python train.py --data-dir /workspace/dataset/Market-1501/Market-1501-v15.09.1
 - [meituan/YOLOv6](https://github.com/meituan/YOLOv6)
 - [WongKinYiu/yolov7](https://github.com/WongKinYiu/yolov7)
 - [Megvii-BaseDetection/YOLOX](https://github.com/Megvii-BaseDetection/YOLOX)
+- [WongKinYiu/yolor](https://github.com/WongKinYiu/yolor)
 
 </details>
 
