@@ -84,6 +84,19 @@ def build_detector(cfg, use_cuda):
                 use_cuda=use_cuda,
                 imgsz=cfg.YOLOV7.IMG_SIZE
                 )    
+        elif cfg.DETECT_MODEL == "yolor":
+            from .YOLOR import YOLOr  # 当前文件导入对应的包
+            return YOLOr(  
+                model_cfg=cfg.YOLOV4.CFG,
+                weightfile=cfg.YOLOV4.WEIGHT,
+                score_thresh=cfg.YOLOV4.SCORE_THRESH, 
+                conf_thresh=cfg.YOLOV4.CONF_THRESH,
+                nms_thresh=cfg.YOLOV4.NMS_THRESH, 
+                is_xywh=cfg.YOLOV4.IS_XYWH, 
+                use_cuda=use_cuda,
+                imgsz=cfg.YOLOV4.IMG_SIZE,
+                dataset_config=cfg.YOLOV4.DATASET
+                )              
         else:
             raise Exception("Need to specify the detection model!")
 

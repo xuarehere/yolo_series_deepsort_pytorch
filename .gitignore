@@ -21,5 +21,4 @@ detector/YOLOV7/.git.bk
 *.wts
 *.zip
 *.conv*
-
-
+*.pyc

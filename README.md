@@ -8,10 +8,10 @@
     - [ReID](#reid)
   - [Dependencies](#dependencies)
   - [Quick Start](#quick-start)
+  - [Training the Object model](#training-the-object-model)
   - [Training the RE-ID model](#training-the-re-id-model)
   - [Demo videos and images](#demo-videos-and-images)
-  - [References](#references)
-  
+- [References](#references)
 # Deep Sort with PyTorch(yolo-all)
 
 
@@ -19,9 +19,10 @@
 
 
 ## Project structure
+<details><summary> <b>Expand</b> </summary>
+
 ```
 yolovx_deepsort_pytorch/
-./yolovx_deepsort_pytorch/
 ├── 001.avi
 ├── configs
 │   ├── deep_sort.yaml
@@ -33,7 +34,8 @@ yolovx_deepsort_pytorch/
 │   ├── yolov4.yaml
 │   ├── yolov5.yaml
 │   ├── yolov6.yaml
-│   └── yolov7.yaml
+│   ├── yolov7.yaml
+│   └── yolox.yaml
 ├── deep_sort
 │   ├── deep
 │   ├── deep_sort.py
@@ -55,10 +57,12 @@ yolovx_deepsort_pytorch/
 │   ├── YOLOV4Scaled
 │   ├── YOLOV5
 │   ├── YOLOV6
-│   └── YOLOV7
+│   ├── YOLOV7
+│   └── YOLOX
 ├── LICENSE
 ├── models
 │   ├── deep_sort_pytorch
+│   ├── readme.md
 │   ├── yolov3
 │   ├── yolov4
 │   ├── yolov4-608
@@ -66,14 +70,17 @@ yolovx_deepsort_pytorch/
 │   ├── yolov4.zip
 │   ├── yolov5
 │   ├── yolov6
-│   └── yolov7
+│   ├── yolov7
+│   └── yolox
 ├── output
+│   ├── README.MD
 │   ├── yolov3
 │   ├── yolov4
 │   ├── yolov4Scaled
 │   ├── yolov5
 │   ├── yolov6
-│   └── yolov7
+│   ├── yolov7
+│   └── yolox
 ├── ped_det_server.py
 ├── README.md
 ├── requirements.txt
@@ -81,7 +88,8 @@ yolovx_deepsort_pytorch/
 │   └── analysis.py
 ├── scripts
 │   ├── yolov3_deepsort.sh
-│   └── yolov3_tiny_deepsort.sh
+│   ├── yolov3_tiny_deepsort.sh
+│   └── yolox_deepsort.sh
 ├── thirdparty
 │   ├── fast-reid
 │   └── mmdetection
@@ -112,9 +120,11 @@ yolovx_deepsort_pytorch/
 │   └── templates
 └── yolov3_deepsort_eval.py
 ```
+</details>
 
 ## Introduction
-This is an implement of MOT tracking algorithm deep sort. This project originates from [deep_sort_pytorch](https://github.com/ZQPei/deep_sort_pytorch). On the above projects, this project add the existing yolo detection model algorithm (YOLOv3, YOLOV4, YOLOV4Scaled, YOLOV5, YOLOV6, YOLOV7).
+
+This is an implement of MOT tracking algorithm deep sort. This project originates from [deep_sort_pytorch](https://github.com/ZQPei/deep_sort_pytorch). On the above projects, this project add the existing yolo detection model algorithm (YOLOv3, YOLOV4, YOLOV4Scaled, YOLOV5, YOLOV6, YOLOV7, YOLOX).
 
 ## Model
 
@@ -139,6 +149,9 @@ This is an implement of MOT tracking algorithm deep sort. This project originate
 
 ## Dependencies
 
+<details><summary> <b>Expand</b> </summary>
+
+See this `requirements.txt` for more detail.
 - python 3 (python2 not sure)
 - numpy
 - scipy
@@ -150,7 +163,11 @@ This is an implement of MOT tracking algorithm deep sort. This project originate
 - vizer
 - edict
 
+</details>
+
 ## Quick Start
+<details><summary> <b>Expand</b> </summary>
+
 0. Check all dependencies installed
 ```bash
 pip install -r requirements.txt
@@ -277,13 +294,34 @@ All files above can also be accessed from BaiduDisk!
 linker：[BaiduDisk](https://pan.baidu.com/s/1YJ1iPpdFTlUyLFoonYvozg)
 passwd：fbuw
 
+</details>
+
+## Training the Object model
+<details><summary> <b>Expand</b> </summary>
+
+[See this link for more detail](https://github.com/xuarehere/yolovx_deepsort_pytorch/issues/5)
+
+</details>
+
 ## Training the RE-ID model
+<details><summary> <b>Expand</b> </summary>
+
 The original model used in paper is in original_model.py, and its parameter here [original_ckpt.t7](https://drive.google.com/drive/folders/1xhG0kRH1EX5B9_Iz8gQJb7UNnn_riXi6).  
 
 To train the model, first you need download [Market1501](http://www.liangzheng.com.cn/Project/project_reid.html) dataset or [Mars](http://www.liangzheng.com.cn/Project/project_mars.html) dataset.  
 
 Then you can try [train.py](deep_sort/deep/train.py) to train your own parameter and evaluate it using [test.py](deep_sort/deep/test.py) and [evaluate.py](deep_sort/deep/evalute.py).
 ![train.jpg](deep_sort/deep/train.jpg)
+
+**Train**
+```
+$ cd ./deep_sort/deep/train.py
+
+$ python train.py --data-dir /workspace/dataset/Market-1501/Market-1501-v15.09.15/pytorch/ --interval 10  --gpu-id 0
+```
+[See this link for more detail](https://github.com/xuarehere/yolovx_deepsort_pytorch/issues/5)
+
+</details>
 
 ## Demo videos and images
 
@@ -295,7 +333,9 @@ Then you can try [train.py](deep_sort/deep/train.py) to train your own parameter
 ![2.jpg](demo/2.jpg)
 
 
-## References
+# References
+<details><summary> <b>Expand</b> </summary>
+
 -  [nwojke/deep_sort](https://github.com/nwojke/deep_sort)
 - [Joseph Redmon/yolov3](https://pjreddie.com/darknet/yolo/)
 - [ZQPei/deep_sort_pytorch](https://github.com/ZQPei/deep_sort_pytorch)
@@ -306,6 +346,6 @@ Then you can try [train.py](deep_sort/deep/train.py) to train your own parameter
 - [WongKinYiu/yolov7](https://github.com/WongKinYiu/yolov7)
 - [Megvii-BaseDetection/YOLOX](https://github.com/Megvii-BaseDetection/YOLOX)
 
-
+</details>
 
 
