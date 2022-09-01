@@ -1,11 +1,11 @@
 # Table of contents
 - [Table of contents](#table-of-contents)
 - [Deep Sort with PyTorch(yolo-all)](#deep-sort-with-pytorchyolo-all)
-  - [Project structure](#project-structure)
   - [Introduction](#introduction)
   - [Model](#model)
     - [Object detection](#object-detection)
     - [ReID](#reid)
+  - [Project structure](#project-structure)
   - [Dependencies](#dependencies)
   - [Quick Start](#quick-start)
   - [Training the Object model](#training-the-object-model)
@@ -16,6 +16,30 @@
 
 
 ![](demo/demo.gif)
+
+## Introduction
+
+This is an implement of MOT tracking algorithm deep sort. This project originates from [deep_sort_pytorch](https://github.com/ZQPei/deep_sort_pytorch). On the above projects, this project add the existing yolo detection model algorithm (**YOLOv3, YOLOV4, YOLOV4Scaled, YOLOV5, YOLOV6, YOLOV7, YOLOX, YOLOR**).
+
+
+## Model
+
+### Object detection
+
+- MMDet
+- YOLOv3
+- YOLOV4
+- YOLOV4Scaled
+- YOLOV5
+- YOLOV6
+- YOLOV7
+- YOLOX
+- YOLOR
+
+### ReID 
+
+- deepsort-reid
+- fast-reid
 
 
 ## Project structure
@@ -127,28 +151,7 @@ yolovx_deepsort_pytorch/
 ```
 </details>
 
-## Introduction
 
-This is an implement of MOT tracking algorithm deep sort. This project originates from [deep_sort_pytorch](https://github.com/ZQPei/deep_sort_pytorch). On the above projects, this project add the existing yolo detection model algorithm (YOLOv3, YOLOV4, YOLOV4Scaled, YOLOV5, YOLOV6, YOLOV7, YOLOX, YOLOR).
-
-## Model
-
-### Object detection
-
-- MMDet
-- YOLOv3
-- YOLOV4
-- YOLOV4Scaled
-- YOLOV5
-- YOLOV6
-- YOLOV7
-- YOLOX
-- YOLOR
-
-### ReID 
-
-- deepsort-reid
-- fast-reid
 
 
 

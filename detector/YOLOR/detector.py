@@ -70,7 +70,6 @@ class YOLOr(object):
         assert isinstance(ori_img, np.ndarray), "input must be a numpy array!"
        
         # resize
-        # img = cv2.resize(img, self.size)
         img = letterbox(ori_img, new_shape=self.size)[0]
         img = img[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB, to 3x416x416
         img = np.ascontiguousarray(img)        

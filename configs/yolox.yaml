@@ -1,6 +1,8 @@
-YOLOV7:
+YOLOX:
   WEIGHT: "./models/yolox/yolox_s.pth"
-
+  MODEL_FILE:   # default None
+  USE_MODEL_NAME: 'yolox-s'
+  LEGACY: False    # "To be compatible with older versions"  
   IMG_SIZE: 640
   SCORE_THRESH: 0.5
   CONF_THRESH: 0.25

@@ -10,27 +10,22 @@ import torch
 from PIL import ImageFont
 import time
 import torchvision
-# from yolov6.utils.events import LOGGER, load_yaml
-# from yolov6.layers.common import DetectBackend
-# from yolov6.data.data_augment import letterbox
-# from yolov6.utils.nms import non_max_suppression
-# from yolov6.utils.torch_utils import get_model_info
 from yolox.exp import get_exp
 from yolox.data.datasets import COCO_CLASSES
 from yolox.data.data_augment import ValTransform
 from yolox.utils import  postprocess
 
 class YOLOx(object):
-    """yolov7"""
+    """YOLOX"""
     def __init__(self, weightfile="", 
     score_thresh=0.0, conf_thresh=0.25, nms_thresh=0.45,
-                 is_xywh=True, use_cuda=True, imgsz=640, half=False, dataset_config=""):    
+                 is_xywh=True, use_cuda=True, imgsz=640, half=False, dataset_config="",**kwargs):  # **kwargs
         # net definition
+        self.config = kwargs["config"]
         self.half = half
         self.device = "cuda" if use_cuda else "cpu"
 
-        # self.net = DetectBackend(weightfile, device=self.device)  # load FP32 model
-        exp = get_exp(None, 'yolox-s')
+        exp = get_exp(self.config['MODEL_FILE'], self.config['USE_MODEL_NAME'])
         self.net = exp.get_model()  # load FP32 model
         self.net.eval()
         ckpt = torch.load(weightfile, map_location=self.device)
@@ -39,7 +34,7 @@ class YOLOx(object):
         
 
         self.size = tuple((imgsz, imgsz))
-        self.preproc = ValTransform(legacy=False)
+        self.preproc = ValTransform(legacy=self.config['LEGACY'])
         if half and self.device == "cuda":
             self.net.half()  # to FP16     
         else:

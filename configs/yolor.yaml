@@ -1,4 +1,4 @@
-YOLOV4:
+YOLOR:
   WEIGHT: "./models/yolor/yolor_p6.pt"
   CFG: "./detector/YOLOR/cfg/yolor_p6.cfg"
   DATASET: detector/YOLOR/data/coco.yaml
