@@ -1,0 +1,12 @@
+PPYOLOE:
+  WEIGHT: "./models/ppyoloe/ppyoloe_s.pth"
+  MODEL_FILE: 'detector/PPYOLOE/exps/ppyoloe/default/ppyoloe_s.py'
+  USE_MODEL_NAME:     # default None
+  LEGACY: True    # "To be compatible with older versions"
+  PPYOLOE: True   # "PPYOLOE flag."
+  IMG_SIZE: 640
+  SCORE_THRESH: 0.5
+  CONF_THRESH: 0.35
+  NMS_THRESH: 0.45
+  IS_XYWH:  True
+  HALF: False
