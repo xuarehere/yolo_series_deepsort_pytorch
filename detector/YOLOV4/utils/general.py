@@ -16,10 +16,14 @@ import matplotlib
 import numpy as np
 import torch
 import yaml
-
-from detector.YOLOV4.utils.google_utils import gsutil_getsize
-from detector.YOLOV4.utils.metrics import fitness, fitness_p, fitness_r, fitness_ap50, fitness_ap, fitness_f   
-from detector.YOLOV4.utils.torch_utils import init_torch_seeds
+try:
+    from utils.google_utils import gsutil_getsize
+    from utils.metrics import fitness, fitness_p, fitness_r, fitness_ap50, fitness_ap, fitness_f   
+    from utils.torch_utils import init_torch_seeds
+except:
+    from detector.YOLOV4.utils.google_utils import gsutil_getsize
+    from detector.YOLOV4.utils.metrics import fitness, fitness_p, fitness_r, fitness_ap50, fitness_ap, fitness_f   
+    from detector.YOLOV4.utils.torch_utils import init_torch_seeds
 
 # Set printoptions
 torch.set_printoptions(linewidth=320, precision=5, profile='long')

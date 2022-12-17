@@ -1,6 +1,6 @@
 # Table of contents
 - [Table of contents](#table-of-contents)
-- [Deep Sort with PyTorch(yolo-all)](#deep-sort-with-pytorchyolo-all)
+- [Deep Sort with PyTorch(support yolo series)](#deep-sort-with-pytorchsupport-yolo-series)
   - [Introduction](#introduction)
   - [Model](#model)
     - [Object detection](#object-detection)
@@ -8,18 +8,39 @@
   - [Project structure](#project-structure)
   - [Dependencies](#dependencies)
   - [Quick Start](#quick-start)
-  - [Training the Object model](#training-the-object-model)
+  - [The Object model](#the-object-model)
+    - [Training the Object model](#training-the-object-model)
+    - [Detect](#detect)
+    - [Validate](#validate)
   - [Training the RE-ID model](#training-the-re-id-model)
   - [Demo videos and images](#demo-videos-and-images)
+- [C ++](#c-)
 - [References](#references)
-# Deep Sort with PyTorch(yolo-all)
+
+# [Deep Sort with PyTorch(support yolo series)](https://github.com/xuarehere/yolovx_deepsort_pytorch)
+
+![](demo/1.jpg)
 
 
-![](demo/demo.gif)
+
+
 
 ## Introduction
 
-This is an implement of MOT tracking algorithm deep sort. This project originates from [deep_sort_pytorch](https://github.com/ZQPei/deep_sort_pytorch). On the above projects, this project add the existing yolo detection model algorithm (**YOLOv3, YOLOV4, YOLOV4Scaled, YOLOV5, YOLOV6, YOLOV7, YOLOX, YOLOR, PPYOLOE**).
+This is an implement of MOT tracking algorithm deep sort. Currently, the project supports models of the mainstream yolo series model. This project add the existing yolo detection model algorithm (**YOLOv3, YOLOV4, YOLOV4Scaled, YOLOV5, YOLOV6, YOLOV7, YOLOX, YOLOR, PPYOLOE**). Therefore, it is sometimes called the following name:
+
+- YOLOv3-DeepSort
+- YOLOV4-DeepSort
+- YOLOV4Scaled-DeepSort
+- YOLOV5-DeepSort
+- YOLOV6-DeepSort
+- YOLOV7-DeepSort
+- YOLOX-DeepSort
+- YOLOR-DeepSort
+- PPYOLOE-DeepSort
+
+
+Also, this project is compatible with the original object detection model structure. Individual training and inference of the detection model can be performed.
 
 
 ## Model
@@ -315,10 +336,48 @@ passwd：fbuw
 
 </details>
 
-## Training the Object model
+## The Object model
 <details><summary> <b>Expand</b> </summary>
 
+Switch to model directory, see README.MD for more details.
+
+For example:
+```shell
+cd detector/YOLOV5
+# see detector/YOLOV5/README.md for more details
+```
+### Training the Object model
+see `detector/{model}/README.md` for more details.
+
+For example:
+
+```shell
+cd detector/YOLOV5
+python train.py --img 640 --data VOC.yaml --cfg yolov5s.yaml --weight ../../models/yolov5/yolov5s.pt --batch-size 64 --epochs 100
+```
+
+or 
 [See this link for more detail](https://github.com/xuarehere/yolovx_deepsort_pytorch/issues/5)
+
+
+### Detect 
+see `detector/{model}/README.md` for more details.
+
+```shell
+cd detector/YOLOV5/
+python  detect.py --source ../../001.avi --weights ../../models/yolov5/v4.0/yolov5s.pt --device 1
+```
+
+### Validate
+Validate a model's accuracy on datasets.
+
+see `detector/{model}/README.md` for more details.
+
+```shell
+cd detector/YOLOV5/
+
+python val.py --weights  ../../models/yolov5/v4.0/yolov5s.pt  --data coco.yaml  --img 640 --half
+```
 
 </details>
 
@@ -331,6 +390,13 @@ To train the model, first you need download [Market1501](http://www.liangzheng.c
 
 Then you can try [train.py](deep_sort/deep/train.py) to train your own parameter and evaluate it using [test.py](deep_sort/deep/test.py) and [evaluate.py](deep_sort/deep/evalute.py).
 ![train.jpg](deep_sort/deep/train.jpg)
+
+**Dataset**
+```
+python prepare_data.py --data_dir {data_path}/Market-1501-v15.09.15
+```
+
+
 
 **Train**
 ```
@@ -345,11 +411,13 @@ $ python train.py --data-dir /workspace/dataset/Market-1501/Market-1501-v15.09.1
 ## Demo videos and images
 
 
-![1.jpg](demo/1.jpg)
+![1.jpg](demo/1.gif)
 
+![1.jpg](demo/2.gif)
 
-
-![2.jpg](demo/2.jpg)
+# C ++
+yolov5, v7
+-  [yolov7_deepsort_tensorrt:](https://github.com/xuarehere/yolov7_deepsort_tensorrt)
 
 
 # References
@@ -365,7 +433,6 @@ $ python train.py --data-dir /workspace/dataset/Market-1501/Market-1501-v15.09.1
 - [WongKinYiu/yolov7](https://github.com/WongKinYiu/yolov7)
 - [Megvii-BaseDetection/YOLOX](https://github.com/Megvii-BaseDetection/YOLOX)
 - [WongKinYiu/yolor](https://github.com/WongKinYiu/yolor)
-
+- [Nioolek/PPYOLOE_pytorch](https://github.com/Nioolek/PPYOLOE_pytorch)
 </details>
-
 

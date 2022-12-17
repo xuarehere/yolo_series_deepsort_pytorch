@@ -5,8 +5,10 @@ import torch
 import yaml
 from scipy.cluster.vq import kmeans
 from tqdm import tqdm
-
-from detector.YOLOV7.utils.general import colorstr
+try:
+    from utils.general import colorstr
+except:    
+    from detector.YOLOV7.utils.general import colorstr
 
 
 def check_anchor_order(m):

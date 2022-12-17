@@ -22,9 +22,12 @@ import pickle
 from copy import deepcopy
 from pycocotools import mask as maskUtils
 from torchvision.utils import save_image
-
-from detector.YOLOV4.utils.general import xyxy2xywh, xywh2xyxy
-from detector.YOLOV4.utils.torch_utils import torch_distributed_zero_first
+try:
+    from utils.general import xyxy2xywh, xywh2xyxy
+    from utils.torch_utils import torch_distributed_zero_first
+except:
+    from detector.YOLOV4.utils.general import xyxy2xywh, xywh2xyxy
+    from detector.YOLOV4.utils.torch_utils import torch_distributed_zero_first
 
 # Parameters
 help_url = 'https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data'

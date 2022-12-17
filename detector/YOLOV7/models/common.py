@@ -11,11 +11,16 @@ import torch.nn.functional as F
 from torchvision.ops import DeformConv2d
 from PIL import Image
 from torch.cuda import amp
-
-from detector.YOLOV7.utils.datasets import letterbox
-from detector.YOLOV7.utils.general import non_max_suppression, make_divisible, scale_coords, increment_path, xyxy2xywh
-from detector.YOLOV7.utils.plots import color_list, plot_one_box
-from detector.YOLOV7.utils.torch_utils import time_synchronized
+try:
+    from utils.datasets import letterbox
+    from utils.general import non_max_suppression, make_divisible, scale_coords, increment_path, xyxy2xywh
+    from utils.plots import color_list, plot_one_box
+    from utils.torch_utils import time_synchronized    
+except:  
+    from detector.YOLOV7.utils.datasets import letterbox
+    from detector.YOLOV7.utils.general import non_max_suppression, make_divisible, scale_coords, increment_path, xyxy2xywh
+    from detector.YOLOV7.utils.plots import color_list, plot_one_box
+    from detector.YOLOV7.utils.torch_utils import time_synchronized
 
 
 ##### basic ####

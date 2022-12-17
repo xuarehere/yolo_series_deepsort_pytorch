@@ -5,12 +5,16 @@ from pathlib import Path
 
 import torch
 import torch.nn as nn
-
 from models.common import *
 from models.experimental import MixConv2d, CrossConv, C3
-from detector.YOLOV4Scaled.utils.general import check_anchor_order, make_divisible, check_file
-from detector.YOLOV4Scaled.utils.torch_utils import (
-    time_synchronized, fuse_conv_and_bn, model_info, scale_img, initialize_weights, select_device)
+try:
+    from utils.general import check_anchor_order, make_divisible, check_file
+    from utils.torch_utils import (
+        time_synchronized, fuse_conv_and_bn, model_info, scale_img, initialize_weights, select_device)
+except:    
+    from detector.YOLOV4Scaled.utils.general import check_anchor_order, make_divisible, check_file
+    from detector.YOLOV4Scaled.utils.torch_utils import (
+        time_synchronized, fuse_conv_and_bn, model_info, scale_img, initialize_weights, select_device)
 
 
 class Detect(nn.Module):

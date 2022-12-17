@@ -3,9 +3,12 @@
 import numpy as np
 import torch
 import torch.nn as nn
-
-from detector.YOLOV4Scaled.models.common import Conv, DWConv
-from detector.YOLOV4Scaled.utils.google_utils import attempt_download
+try:
+    from models.common import Conv, DWConv
+    from utils.google_utils import attempt_download    
+except:    
+    from detector.YOLOV4Scaled.models.common import Conv, DWConv
+    from detector.YOLOV4Scaled.utils.google_utils import attempt_download
 
 
 class CrossConv(nn.Module):

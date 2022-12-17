@@ -1,6 +1,8 @@
 import torch.nn.functional as F
-
-from detector.YOLOV4.utils.general import *
+try:
+    from utils.general import *
+except:
+    from detector.YOLOV4.utils.general import *
 
 import torch
 from torch import nn

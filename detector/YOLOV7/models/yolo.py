@@ -8,11 +8,19 @@ logger = logging.getLogger(__name__)
 
 from models.common import *
 from models.experimental import *
-from detector.YOLOV7.utils.autoanchor import check_anchor_order
-from detector.YOLOV7.utils.general import make_divisible, check_file, set_logging
-from detector.YOLOV7.utils.torch_utils import time_synchronized, fuse_conv_and_bn, model_info, scale_img, initialize_weights, \
-    select_device, copy_attr
-from detector.YOLOV7.utils.loss import SigmoidBin
+try:
+    from utils.autoanchor import check_anchor_order
+    from utils.general import make_divisible, check_file, set_logging
+    from utils.torch_utils import time_synchronized, fuse_conv_and_bn, model_info, scale_img, initialize_weights, \
+        select_device, copy_attr
+    from utils.loss import SigmoidBin
+    
+except:    
+    from detector.YOLOV7.utils.autoanchor import check_anchor_order
+    from detector.YOLOV7.utils.general import make_divisible, check_file, set_logging
+    from detector.YOLOV7.utils.torch_utils import time_synchronized, fuse_conv_and_bn, model_info, scale_img, initialize_weights, \
+        select_device, copy_attr
+    from detector.YOLOV7.utils.loss import SigmoidBin
 
 try:
     import thop  # for FLOPS computation

@@ -12,7 +12,10 @@ import cv2
 
 import torch
 import sys
-sys.path.append(os.path.abspath('.'))
+# sys.path.append(os.path.abspath('.'))
+ROOT = os.getcwd()
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))
 from yolox.data.data_augment import ValTransform
 from yolox.data.datasets import COCO_CLASSES
 from yolox.exp import get_exp

@@ -228,6 +228,7 @@ def parse_args():
 if __name__ == "__main__":
     args = parse_args()
     cfg = get_config()
+    print(args)
     if args.mmdet:
         cfg.merge_from_file(args.config_mmdetection)
         cfg.USE_MMDET = True

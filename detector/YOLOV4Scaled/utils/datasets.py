@@ -13,8 +13,11 @@ import torch
 from PIL import Image, ExifTags
 from torch.utils.data import Dataset
 from tqdm import tqdm
-
-from ..utils.general import xyxy2xywh, xywh2xyxy, torch_distributed_zero_first
+try:
+    from utils.general import xyxy2xywh, xywh2xyxy, torch_distributed_zero_first
+except:    
+    from detector.YOLOV4Scaled.utils.general import xyxy2xywh, xywh2xyxy, torch_distributed_zero_first
+    # from ..utils.general import xyxy2xywh, xywh2xyxy, torch_distributed_zero_first
 
 help_url = ''
 img_formats = ['.bmp', '.jpg', '.jpeg', '.png', '.tif', '.tiff', '.dng']

@@ -1,0 +1,73 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        // test
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                // //  v3
+                // "./001.avi",     
+                // "--save_path",      "./output/yolov3/001",   
+
+                // // v4
+                // "./001.avi",        
+                // "--save_path",      "./output/yolov4/001",   
+                // "--detect_model",   "yolov4", 
+                // "--config_detection", "./configs/yolov4.yaml",
+
+                // // v4Scaled
+                // "./001.avi",     
+                // "--save_path",      "./output/yolov4Scaled/001",   
+                // "--detect_model",   "yolov4Scaled", 
+                // "--config_detection", "./configs/yolov4Scaled.yaml",
+           
+
+                // // v5
+                // "./001.avi",  
+                // "--save_path",      "./output/yolov5/001",   
+                // "--detect_model",   "yolov5", 
+                // "--config_detection", "./configs/yolov5.yaml",
+
+                // // v6
+                // "./001.avi",    
+                // "--save_path",      "./output/yolov6/001",   
+                // "--detect_model",   "yolov6", 
+                // "--config_detection", "./configs/yolov6.yaml",
+
+                // //  v7
+                //  "./001.avi",    
+                // "--save_path",      "./output/yolov7/001",   
+                // "--detect_model",   "yolov7",                   
+                // "--config_detection", "./configs/yolov7.yaml",
+
+                // //  yolox
+                //  "./001.avi",     
+                //  "--save_path",      "./output/yolox/001",   
+                //  "--detect_model",   "yolox", 
+                //  "--config_detection", "./configs/yolox.yaml",
+
+                // //  yolor
+                //  "./001.avi",     
+                //  "--save_path",      "./output/yolor/001",   
+                //  "--detect_model",   "yolor", 
+                //  "--config_detection", "./configs/yolor.yaml",  
+                
+                //  ppyoloe
+                 "./001.avi",     
+                 "--save_path",      "./output/ppyoloe/001",   
+                 "--detect_model",   "ppyoloe", 
+                 "--config_detection", "./configs/ppyoloe.yaml",                  
+
+            ]
+        }
+         
+
+    ]
+}

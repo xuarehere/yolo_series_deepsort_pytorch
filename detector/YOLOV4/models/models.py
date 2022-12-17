@@ -1,7 +1,13 @@
-from detector.YOLOV4.utils.google_utils import *
-from detector.YOLOV4.utils.layers import *
-from detector.YOLOV4.utils.parse_config import *
-from detector.YOLOV4.utils import torch_utils
+try:
+    from utils.google_utils import *
+    from utils.layers import *
+    from utils.parse_config import *
+    from utils import torch_utils
+except:
+    from detector.YOLOV4.utils.google_utils import *
+    from detector.YOLOV4.utils.layers import *
+    from detector.YOLOV4.utils.parse_config import *
+    from detector.YOLOV4.utils import torch_utils
 
 ONNX_EXPORT = False
 
