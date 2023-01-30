@@ -71,6 +71,18 @@ def build_detector(cfg, use_cuda):
             use_cuda=use_cuda,
             imgsz=cfg.YOLOV7.IMG_SIZE
             )                
+    elif cfg.DETECT_MODEL == "yolov8":
+        from .YOLOV8 import YOLOv8  # 当前文件导入对应的包
+        return YOLOv8(  
+            weightfile=cfg.YOLOV8.WEIGHT,
+            score_thresh=cfg.YOLOV8.SCORE_THRESH, 
+            conf_thresh=cfg.YOLOV8.CONF_THRESH,
+            nms_thresh=cfg.YOLOV8.NMS_THRESH, 
+            is_xywh=cfg.YOLOV8.IS_XYWH, 
+            use_cuda=use_cuda,
+            imgsz=(cfg.YOLOV8.IMG_SIZE_HEIGHT, cfg.YOLOV8.IMG_SIZE_WIDTH),
+            config= cfg.YOLOV8
+            )                     
     elif cfg.DETECT_MODEL == "yolox":
         from .YOLOX import YOLOx  # 当前文件导入对应的包
         return YOLOx(  

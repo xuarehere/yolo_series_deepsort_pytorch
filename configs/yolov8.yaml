@@ -1,0 +1,14 @@
+YOLOV8:
+  # WEIGHT: "./models/yolov8/yolov8n.pt"
+  WEIGHT: "./models/yolov8/yolov8s.pt"
+  DATA_CONFIG: "./detector/YOLOV8/ultralytics/yolo/data/datasets/coco.yaml"
+  IMG_SIZE_HEIGHT: 640
+  IMG_SIZE_WIDTH: 640
+  SCORE_THRESH: 0.5
+  CONF_THRESH: 0.25
+  NMS_THRESH: 0.45
+  IS_XYWH:  True
+  OpenCV_DNN: False
+  DEVICE: ''  # cuda device, i.e. 0 or 0,1,2,3 or cpu
+  HALF: False
+  MAX_DET: 300

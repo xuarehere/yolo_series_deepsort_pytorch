@@ -1,3 +1,12 @@
+'''
+Author: xuarehere xuarehere@foxmail.com
+Date: 2022-07-13 16:55:43
+LastEditTime: 2023-01-29 18:59:39
+LastEditors: xuarehere xuarehere@foxmail.com
+Description: 
+FilePath: /yolovx_deepsort_pytorch/deep_sort/sort/preprocessing.py
+
+'''
 # vim: expandtab:ts=4:sw=4
 import numpy as np
 import cv2
@@ -37,7 +46,7 @@ def non_max_suppression(boxes, max_bbox_overlap, scores=None):
     if len(boxes) == 0:
         return []
 
-    boxes = boxes.astype(np.float)
+    boxes = boxes.astype(np.float32)
     pick = []
 
     x1 = boxes[:, 0]    # # 取四个坐标数组

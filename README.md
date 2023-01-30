@@ -27,7 +27,7 @@
 
 ## Introduction
 
-This is an implement of MOT tracking algorithm deep sort. Currently, the project supports models of the mainstream yolo series model. This project add the existing yolo detection model algorithm (**YOLOv3, YOLOV4, YOLOV4Scaled, YOLOV5, YOLOV6, YOLOV7, YOLOX, YOLOR, PPYOLOE**). Therefore, it is sometimes called the following name:
+This is an implement of MOT tracking algorithm deep sort. Currently, the project supports models of the mainstream yolo series model. This project add the existing yolo detection model algorithm (**YOLOv3, YOLOV4, YOLOV4Scaled, YOLOV5, YOLOV6, YOLOV7, YOLOV8, YOLOX, YOLOR, PPYOLOE**). Therefore, it is sometimes called the following name:
 
 - YOLOv3-DeepSort
 - YOLOV4-DeepSort
@@ -35,6 +35,7 @@ This is an implement of MOT tracking algorithm deep sort. Currently, the project
 - YOLOV5-DeepSort
 - YOLOV6-DeepSort
 - YOLOV7-DeepSort
+- YOLOV8-DeepSort
 - YOLOX-DeepSort
 - YOLOR-DeepSort
 - PPYOLOE-DeepSort
@@ -54,6 +55,7 @@ Also, this project is compatible with the original object detection model struct
 - YOLOV5
 - YOLOV6
 - YOLOV7
+- YOLOV8
 - YOLOX
 - YOLOR
 - PPYOLOE
@@ -323,8 +325,17 @@ python3 deepsort.py ./001.avi --save_path ./output/yolov6/001 --config_detection
 # yolov7 + deepsort on video
 python3 deepsort.py ./001.avi --save_path ./output/yolov7/001 --config_detection ./configs/yolov7.yaml --detect_model yolov7
 
+# yolov8 + deepsort on video
+python3 deepsort.py ./001.avi --save_path ./output/yolov8/001 --detect_model yolov8 --config_detection ./configs/yolov8.yaml 
+
 # yolox + deepsort on video
 python deepsort.py  ./001.avi --save_path ./output/yolox/001  --config_detection ./configs/yolox.yaml  --detect_model yolox 
+
+# yolor + deepsort on video
+python deepsort.py  ./001.avi --save_path ./output/yolor/001  --config_detection ./configs/yolor.yaml  --detect_model yolor 
+
+# ppyoloe + deepsort on video
+python deepsort.py  ./001.avi --save_path ./output/ppyoloe/001  --config_detection ./configs/ppyoloe.yaml  --detect_model ppyoloe 
 
 ```
 Use `--display` to enable display.  
@@ -423,7 +434,9 @@ yolov5, v7
 # References
 <details><summary> <b>Expand</b> </summary>
 
--  [nwojke/deep_sort](https://github.com/nwojke/deep_sort)
+- [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
+- [isLinXu/YOLOv8_Efficient](https://github.com/isLinXu/YOLOv8_Efficient)
+- [nwojke/deep_sort](https://github.com/nwojke/deep_sort)
 - [Joseph Redmon/yolov3](https://pjreddie.com/darknet/yolo/)
 - [ZQPei/deep_sort_pytorch](https://github.com/ZQPei/deep_sort_pytorch)
 - [WongKinYiu/PyTorch_YOLOv4](https://github.com/WongKinYiu/PyTorch_YOLOv4)
@@ -434,5 +447,6 @@ yolov5, v7
 - [Megvii-BaseDetection/YOLOX](https://github.com/Megvii-BaseDetection/YOLOX)
 - [WongKinYiu/yolor](https://github.com/WongKinYiu/yolor)
 - [Nioolek/PPYOLOE_pytorch](https://github.com/Nioolek/PPYOLOE_pytorch)
+
 </details>
 

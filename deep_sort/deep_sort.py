@@ -53,7 +53,7 @@ class DeepSort(object):
             box = track.to_tlwh()
             x1,y1,x2,y2 = self._tlwh_to_xyxy(box)
             track_id = track.track_id
-            outputs.append(np.array([x1,y1,x2,y2,track_id], dtype=np.int))      # 每个元素的输出信息
+            outputs.append(np.array([x1,y1,x2,y2,track_id], dtype=np.int32))      # 每个元素的输出信息
         if len(outputs) > 0:
             outputs = np.stack(outputs,axis=0)
         return outputs, detections

@@ -1,3 +1,12 @@
+'''
+Author: xuarehere xuarehere@foxmail.com
+Date: 2022-07-13 16:55:43
+LastEditTime: 2023-01-30 18:50:15
+LastEditors: xuarehere xuarehere@foxmail.com
+Description: 
+FilePath: /yolovx_deepsort_pytorch/detector/YOLOV7/detector.py
+
+'''
 import torch
 import logging
 import numpy as np
@@ -57,7 +66,7 @@ class YOLOv7(object):
         img = img[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB, to 3x416x416
         img = np.ascontiguousarray(img)        
         # img = torch.from_numpy(img).float().permute(2, 0, 1).unsqueeze(0)
-        img = img.astype(np.float) / 255.
+        img = img.astype(np.float32) / 255.
         img = torch.from_numpy(img).float().unsqueeze(0)
         # forward
         with torch.no_grad():

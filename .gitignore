@@ -22,3 +22,4 @@ detector/YOLOV7/.git.bk
 *.zip
 *.conv*
 *.pyc
+configs/yolov5-check.yaml

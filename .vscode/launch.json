@@ -54,16 +54,22 @@
                 //  "--config_detection", "./configs/yolox.yaml",
 
                 // //  yolor
-                //  "./001.avi",     
-                //  "--save_path",      "./output/yolor/001",   
-                //  "--detect_model",   "yolor", 
-                //  "--config_detection", "./configs/yolor.yaml",  
-                
-                //  ppyoloe
                  "./001.avi",     
-                 "--save_path",      "./output/ppyoloe/001",   
-                 "--detect_model",   "ppyoloe", 
-                 "--config_detection", "./configs/ppyoloe.yaml",                  
+                 "--save_path",      "./output/yolor/001",   
+                 "--detect_model",   "yolor", 
+                 "--config_detection", "./configs/yolor.yaml",  
+                
+                // //  ppyoloe
+                //  "./001.avi",     
+                //  "--save_path",      "./output/ppyoloe/001",   
+                //  "--detect_model",   "ppyoloe", 
+                //  "--config_detection", "./configs/ppyoloe.yaml",    
+                
+                // //  yolov8
+                // "./001.avi",     
+                // "--save_path",      "./output/yolov8/001",   
+                // "--detect_model",   "yolov8", 
+                // "--config_detection", "./configs/yolov8.yaml",                                  
 
             ]
         }

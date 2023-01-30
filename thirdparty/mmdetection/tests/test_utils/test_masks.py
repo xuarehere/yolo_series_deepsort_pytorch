@@ -390,7 +390,7 @@ def test_polygon_mask_rescale():
     assert rescaled_masks.to_ndarray().shape == (0, 56, 56)
 
     # rescale with polygon masks contain 3 instances
-    raw_masks = [[np.array([1, 1, 3, 1, 4, 3, 2, 4, 1, 3], dtype=np.float)]]
+    raw_masks = [[np.array([1, 1, 3, 1, 4, 3, 2, 4, 1, 3], dtype=np.float32)]]
     polygon_masks = PolygonMasks(raw_masks, 5, 5)
     rescaled_masks = polygon_masks.rescale((12, 10))
     assert len(rescaled_masks) == 1
@@ -419,7 +419,7 @@ def test_polygon_mask_resize():
     assert len(resized_masks.get_bboxes()) == 0
 
     # resize with polygon masks contain 1 instance 1 part
-    raw_masks1 = [[np.array([1, 1, 3, 1, 4, 3, 2, 4, 1, 3], dtype=np.float)]]
+    raw_masks1 = [[np.array([1, 1, 3, 1, 4, 3, 2, 4, 1, 3], dtype=np.float32)]]
     polygon_masks1 = PolygonMasks(raw_masks1, 5, 5)
     resized_masks1 = polygon_masks1.resize((10, 10))
     assert len(resized_masks1) == 1
@@ -466,7 +466,7 @@ def test_polygon_mask_resize():
     assert (resized_masks3.to_ndarray() == truth3).all()
 
     # resize to non-square
-    raw_masks4 = [[np.array([1, 1, 3, 1, 4, 3, 2, 4, 1, 3], dtype=np.float)]]
+    raw_masks4 = [[np.array([1, 1, 3, 1, 4, 3, 2, 4, 1, 3], dtype=np.float32)]]
     polygon_masks4 = PolygonMasks(raw_masks4, 5, 5)
     resized_masks4 = polygon_masks4.resize((5, 10))
     assert len(resized_masks4) == 1

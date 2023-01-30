@@ -65,7 +65,7 @@ class YOLOv6(object):
         img = letterbox(ori_img, new_shape=self.size)[0]
         img = img[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB, to 3x416x416
         img = np.ascontiguousarray(img)        
-        img = img.astype(np.float) / 255.   # 0 - 255 to 0.0 - 1.0
+        img = img.astype(np.float32) / 255.   # 0 - 255 to 0.0 - 1.0
         img = torch.from_numpy(img).float().unsqueeze(0)
         # forward
         with torch.no_grad():

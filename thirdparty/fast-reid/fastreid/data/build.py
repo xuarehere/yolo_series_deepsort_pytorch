@@ -6,7 +6,12 @@
 
 import os
 import torch
-from torch._six import container_abcs, string_classes, int_classes
+if torch.__version__ <= "1.8":
+    from torch._six import container_abcs, string_classes, int_classes
+else:
+    import collections.abc as container_abcs
+    int_classes = int
+    from torch._six import string_classes
 from torch.utils.data import DataLoader
 from fastreid.utils import comm
 
