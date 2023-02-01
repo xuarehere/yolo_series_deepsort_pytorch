@@ -1,3 +1,4 @@
+# python 3.8.6(The old python version is 3.6.9 when developing the state before commit id d69e39c3f81ab8662eea601306b1e632b3bbebd8)
 absl-py>=1.0.0
 addict>=2.4.0
 aiocontextvars>=0.2.2
